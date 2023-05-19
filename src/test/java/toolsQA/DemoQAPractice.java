@@ -71,39 +71,61 @@ public class DemoQAPractice {
 //        Thread.sleep(3000);
 //        chromeDriver.quit();
         //Edit Data from the WebTable
-        chromeDriver.get("https://demoqa.com/webtables");
-        WebElement editButton = chromeDriver.findElement(By.id("edit-record-1"));
-        editButton.click();
-        WebElement firstName = chromeDriver.findElement(By.id("firstName"));
-        firstName.click();
-        firstName.clear();
-        firstName.sendKeys("Nazneen");
-        WebElement lastName = chromeDriver.findElement(By.id("lastName"));
-        lastName.click();
-        lastName.clear();
-        lastName.sendKeys("Rahman");
-        WebElement userEmail = chromeDriver.findElement(By.id("userEmail"));
-        userEmail.click();
-        userEmail.clear();
-        userEmail.sendKeys("naz@yopmail.com");
-        WebElement age = chromeDriver.findElement(By.id("age"));
-        age.click();
-        age.clear();
-        age.sendKeys("27");
-        WebElement salary = chromeDriver.findElement(By.id("salary"));
-        salary.click();
-        salary.clear();
-        salary.sendKeys("1");
-        WebElement department = chromeDriver.findElement(By.id("department"));
-        department.click();
-        department.clear();
-        department.sendKeys("SQA ENGINEER");
-        WebElement submitButton = chromeDriver.findElement(By.id("submit"));
-        submitButton.click();
-        Thread.sleep(3000);
-        chromeDriver.quit();
+//        chromeDriver.get("https://demoqa.com/webtables");
+//        WebElement editButton = chromeDriver.findElement(By.id("edit-record-1"));
+//        editButton.click();
+//        WebElement firstName = chromeDriver.findElement(By.id("firstName"));
+//        firstName.click();
+//        firstName.clear();
+//        firstName.sendKeys("Nazneen");
+//        WebElement lastName = chromeDriver.findElement(By.id("lastName"));
+//        lastName.click();
+//        lastName.clear();
+//        lastName.sendKeys("Rahman");
+//        WebElement userEmail = chromeDriver.findElement(By.id("userEmail"));
+//        userEmail.click();
+//        userEmail.clear();
+//        userEmail.sendKeys("naz@yopmail.com");
+//        WebElement age = chromeDriver.findElement(By.id("age"));
+//        age.click();
+//        age.clear();
+//        age.sendKeys("27");
+//        WebElement salary = chromeDriver.findElement(By.id("salary"));
+//        salary.click();
+//        salary.clear();
+//        salary.sendKeys("1");
+//        WebElement department = chromeDriver.findElement(By.id("department"));
+//        department.click();
+//        department.clear();
+//        department.sendKeys("SQA ENGINEER");
+//        WebElement submitButton = chromeDriver.findElement(By.id("submit"));
+//        submitButton.click();
+//        Thread.sleep(3000);
+//        chromeDriver.quit();
 
 //      Data scrap from the table
+//        chromeDriver.get("https://demoqa.com/webtables");
+//        WebElement table = chromeDriver.findElement(By.className("rt-tbody"));
+//        List<WebElement> allRows = table.findElements(By.className("rt-tr"));
+//        int i=0;
+//        for (WebElement row:allRows) {
+//            List<WebElement> cells = row.findElements(By.className("rt-td"));
+//            for(WebElement cell:cells)
+//            {
+//                i++;
+//                System.out.println("num:["+i+"]"+cell.getText());
+//            }
+//        }
+//        chromeDriver.quit();
+        //iFrame
+        chromeDriver.get("https://demoqa.com/frames");
+        chromeDriver.switchTo().frame("frame2");
+        WebElement iFrame = chromeDriver.findElement(By.id("sampleHeading"));
+        String text = iFrame.getText();
+        Assert.assertTrue(text.contains("This is a sample page"));
+        chromeDriver.switchTo().defaultContent();
+
 
     }
+
 }

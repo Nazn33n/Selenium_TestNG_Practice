@@ -55,8 +55,14 @@ public class shoppingCartPractice {
         WebElement finishButton = chromeDriver.findElement(By.id("finish"));
         finishButton.click();
 
-        Thread.sleep(3000);
-        chromeDriver.quit();
+        WebElement leftMenu = chromeDriver.findElement(By.id("react-burger-menu-btn"));
+        leftMenu.click();
+
+        WebElement logoutButton = chromeDriver.findElement(By.id("logout_sidebar_link"));
+        logoutButton.click();
+
+        /*Thread.sleep(3000);
+        chromeDriver.quit();*/
 
 
     }
